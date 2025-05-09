@@ -3,6 +3,9 @@
     "dev": "deno run --allow-net --watch src/index.ts"
   },
   "imports": {
+    "schemas/": "./src/schemas/",
+    "routes/": "./src/routes/",
+    "mock/": "./src/mock/",
     "@hono/hono": "jsr:@hono/hono@^4.7.9",
     "@hono/zod-openapi": "npm:@hono/zod-openapi@^0.19.6",
     "@std/assert": "jsr:@std/assert@1",

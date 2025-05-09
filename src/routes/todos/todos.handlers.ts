@@ -1,1 +1,1 @@
-export { list } from "./list.handler.ts"
+export { list } from "./handlers/list.handler.ts"

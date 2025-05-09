@@ -1,9 +1,9 @@
 import { z } from "zod"
 import { Context } from "@hono/hono"
 
-import { todo } from "../../schemas/todo.ts"
+import { todo } from "schemas/todo.ts"
 
-import { todos } from "../../mock/todos.ts"
+import { todos } from "../../../mock/todos.ts"
 
 const querySchema = z.object({
   title: z.string().optional(),
