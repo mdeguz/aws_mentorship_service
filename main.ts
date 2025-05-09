@@ -1,8 +1,9 @@
-export function add(a: number, b: number): number {
-  return a + b;
-}
+import { Hono } from "@hono/hono"
 
-// Learn more at https://docs.deno.com/runtime/manual/examples/module_metadata#concepts
-if (import.meta.main) {
-  console.log("Add 2 + 3 =", add(2, 3));
-}
+const app = new Hono()
+
+app.get("/", (c) => {
+  return c.text("Hello!")
+})
+
+Deno.serve(app.fetch)
