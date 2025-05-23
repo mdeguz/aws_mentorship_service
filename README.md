@@ -1,5 +1,28 @@
 # What
 A to-do service that runs on the Deno run-time using Hono as the Web framework.
+# Quick Start
+1. Clone the repo then [Install Deno ](https://docs.deno.com/runtime/getting_started/installation/).
+2. Run `deno install` to install dependencies.
+3. Run `deno run dev`.
+4. Navigate to `http://localhost:8000/todos?page=1` which should return
+```json
+{
+"data": [
+{
+"uuid": "f30aa3e0-3808-11f0-b8a6-cd022729cef0",
+"title": "Create Enterprise To-do App",
+"description": "\n        Create an enterprise-grade To-do app that leverages cutting-edge cloud technology like AWS, while\n        also using a blazingly fast yet modern front-end framework like Next.js. \n      ",
+"completed": false
+}
+],
+"page": "1"
+}
+```
+
+This project was started to experiment with Serverless technology. Specifically AWS Lambda.
+To upload this code to Lambda, please follow:
+- https://docs.deno.com/examples/aws_lambda_tutorial/
+
 # OpenAPI Spec
 At the moment, data is mocked. No data is being persisted, written, or read.
 Only the GET /todos endpoint has been implemented so far.
