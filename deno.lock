@@ -8,6 +8,7 @@
     "jsr:@std/internal@^1.0.6": "1.0.6",
     "jsr:@std/uuid@^1.0.7": "1.0.7",
     "npm:@hono/zod-openapi@~0.19.6": "0.19.6_hono@4.7.9_zod@3.24.4",
+    "npm:@types/node@*": "22.15.15",
     "npm:zod@^3.24.4": "3.24.4"
   },
   "jsr": {
@@ -61,6 +62,12 @@
         "zod"
       ]
     },
+    "@types/node@22.15.15": {
+      "integrity": "sha512-R5muMcZob3/Jjchn5LcO8jdKwSCbzqmPB6ruBxMcf9kbxtniZHP327s6C37iOfuw8mbKK3cAQa7sEl7afLrQ8A==",
+      "dependencies": [
+        "undici-types"
+      ]
+    },
     "hono@4.7.9": {
       "integrity": "sha512-/EsCoR5h7N4yu01TDu9GMCCJa6ZLk5ZJIWFFGNawAXmd1Tp53+Wir4xm0D2X19bbykWUlzQG0+BvPAji6p9E8Q=="
     },
@@ -69,6 +76,9 @@
       "dependencies": [
         "yaml"
       ]
+    },
+    "undici-types@6.21.0": {
+      "integrity": "sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ=="
     },
     "yaml@2.7.1": {
       "integrity": "sha512-10ULxpnOCQXxJvBgxsn9ptjq6uviG/htZKk9veJGhlqn3w/DxQ631zFF+nlQXLwmImeS5amR2dl2U8sg6U9jsQ==",
