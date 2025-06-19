@@ -7,17 +7,40 @@ A to-do service that runs on the Deno run-time using Hono as the Web framework.
 4. Navigate to `http://localhost:8000/todos?page=1` which should return
 ```json
 {
-"data": [
-{
-"uuid": "f30aa3e0-3808-11f0-b8a6-cd022729cef0",
-"title": "Create Enterprise To-do App",
-"description": "\n        Create an enterprise-grade To-do app that leverages cutting-edge cloud technology like AWS, while\n        also using a blazingly fast yet modern front-end framework like Next.js. \n      ",
-"completed": false
-}
-],
-"page": "1"
+  "data": [
+    {
+      "uuid": "f30aa3e0-3808-11f0-b8a6-cd022729cef0",
+      "title": "Create Enterprise To-do App",
+      "description": "\n        Create an enterprise-grade To-do app that leverages cutting-edge cloud technology like AWS, while\n        also using a blazingly fast yet modern front-end framework like Next.js. \n      ",
+      "completed": false
+    }
+  ],
+  "page": "1"
 }
 ```
+
+## Packaging and Deployment
+1. Configure your AWS CLI with your credentials for the environment
+  - ```sh
+    aws configure
+    ```
+2. Log into AWS ECR
+  - ```sh
+    aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 351881026653.dkr.ecr.us-east-2.amazonaws.com
+    ```
+3. Build & Tag the Docker Image
+  - ```sh
+    docker build . -t todo-api:latest -t 351881026653.dkr.ecr.us-east-2.amazonaws.com/todo-api:latest
+    ```
+4. Push the Docker Image to ECR
+  - ```sh
+    docker push 351881026653.dkr.ecr.us-east-2.amazonaws.com/todo-api:latest
+    ```
+5. In AWS Lambda, deploy the new image
+6. ???
+7. Profit
+
+## Project Details
 
 This project was started to experiment with Serverless technology. Specifically AWS Lambda.
 To upload this code to Lambda, please follow:
